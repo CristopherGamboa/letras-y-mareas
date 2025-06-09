@@ -50,7 +50,7 @@ function validateEvent(event) {
     }
 
     // Validar URL de Instagram
-    const instagramRegex = /^(https?:\/\/)?(www\.)?instagram\.com\/[A-Za-z0-9._%-]+\/?$/;
+    const instagramRegex = /^(https?:\/\/)?(www\.)?instagram\.com\/[A-Za-z0-9._~:/?#@!$&'()*+,;=%-]+\/?$/;
     if (!event.instagram || !event.instagram.trim()) {
         showError("event-instagram", "El enlace de Instagram es obligatorio.");
         isValid = false;
