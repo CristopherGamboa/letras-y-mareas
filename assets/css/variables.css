@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap');
+:root {
+  /* Bootstrap custom variables */
+
+  --bs-primary: #e9c16a;
+  --bs-primary-rgb: 233, 193, 106;
+  --bs-primary-hover: #d3a84d;
+
+  --bs-secondary: #64a2ad;
+  --bs-secondary-rgb: 100, 162, 173;
+  --bs-secondary-hover: #528792;
+
+  --text-primary-color: #f8fdf5 ;
+  --text-secondary-color: #2e2e2e ;
+
+  --bs-body-bg: #64a2ad;
+
+  --secondary-bg: #fffaf7;
+
+  --bs-font-serif: 'Merriweather', serif;
+}
+
+
+

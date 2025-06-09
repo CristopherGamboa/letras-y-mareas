@@ -1,0 +1,46 @@
+@import url('./variables.css');
+@import url('./bootstrap-custom.css');
+
+/* Estilos generales */
+
+header, footer {
+    background-color: var(--secondary-bg);
+}
+
+.text-primary-color {
+    color: var(--text-primary-color);
+}
+
+.text-secondary-color {
+    color: var(--text-secondary-color);
+}
+
+.secondary-bg {
+    background-color: var(--secondary-bg);
+}
+
+.custom-link {
+  color: var(--bs-secondary);
+  text-decoration: none;
+}
+
+.custom-link:hover {
+  color: var(--bs-secondary-hover);
+}
+
+.navbar-toggler-icon {
+  color: var(--bs-primary);
+}
+
+.navbar-toggler:focus {
+  box-shadow: var(--bs-primary) 0 0 0 0.10rem;
+}
+
+.transition-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.transition-overlay:hover {
+  opacity: 1;
+}

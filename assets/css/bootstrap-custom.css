@@ -1,0 +1,37 @@
+@import url('./variables.css');
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:focus-visible {
+    background-color: var(--bs-primary-hover) !important;
+    border-color: var(--bs-primary-hover) !important;
+}
+
+.btn-secondary {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus, .btn-secondary:focus-visible {
+    background-color: var(--bs-secondary-hover) !important;
+    border-color: var(--bs-secondary-hover) !important;
+}
+
+.nav-primary:hover {
+  background-color: var(--bs-primary-hover) !important;
+}
+
+.nav-secondary:hover {
+  background-color: var(--bs-secondary-hover) !important;
+}
+
+h1, h2, h3, .title-font {
+  font-family: var(--bs-font-serif);
+}
+
+.bg-white {
+  background-color: var(--secondary-bg) !important;
+}
