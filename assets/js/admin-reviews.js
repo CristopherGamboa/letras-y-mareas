@@ -7,7 +7,8 @@ function openCreateReviewModal() {
 
 function openEditReviewModal() {
     document.getElementById('review-modal-label').textContent = 'Editar Reseña';
-
+    document.getElementById('review-form').reset();
+    
     new bootstrap.Modal(document.getElementById('review-modal')).show();
 }
 

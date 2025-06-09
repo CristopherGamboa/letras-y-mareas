@@ -7,6 +7,8 @@ function openCreateModal() {
 }
 
 function openEditModal() {
+    document.getElementById('event-modal-label').textContent = 'Editar Evento';
+    document.getElementById('event-form').reset();
     new bootstrap.Modal(document.getElementById('event-modal')).show();
 }
 
