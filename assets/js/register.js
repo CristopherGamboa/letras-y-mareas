@@ -53,6 +53,7 @@ function validateUser(user) {
     const confirmPassword = user.confirmPassword;
     const hasNumber = /\d/;
     const hasUpperCase = /[A-Z]/;
+    const hasLowerCase = /[a-z]/;
     const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/;
 
     if (!password) {
@@ -63,8 +64,8 @@ function validateUser(user) {
             showError("register-password", "La contraseña debe tener entre 6 y 18 caracteres.");
             isValid = false;
         }
-        if (!hasNumber.test(password) || !hasUpperCase.test(password) || !hasSpecialChar.test(password)) {
-            showError("register-password", "La contraseña debe tener al menos una letra mayúscula, un número y un carácter especial.");
+        if (!hasNumber.test(password) || !hasUpperCase.test(password) || !hasSpecialChar.test(password) || !hasLowerCase.test(password)) {
+            showError("register-password", "La contraseña debe tener al menos una letra mayúscula, minúscula, un número y un carácter especial.");
             isValid = false;
         }
     }
