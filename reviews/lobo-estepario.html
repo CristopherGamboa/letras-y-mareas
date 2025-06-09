@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letras y Mareas - San Antonio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="body-bg d-flex flex-column min-vh-100">
+    <header class="container-fluid sticky-top">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="../assets/img/logo.png" alt="Logo" width="100" class="img-fluid">
+                        </a>
+                        <button class="navbar-toggler border-0 focus" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-nav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse overflow-auto" id="navbar-nav">
+                            <ul class="navbar-nav ms-auto d-flex flex-row gap-2">
+                                <li class="nav-item">
+                                    <a class="nav-link nav-primary roundedd-flex align-items-center justify-content-center bg-primary text-white fw-medium px-4 px-lg-5 py-3" href="../index.html">
+                                    Inicio
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-primary d-flex align-items-center justify-content-center bg-primary text-white fw-medium px-4 px-lg-5 py-3" href="../events.html">
+                                    Eventos
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-primary d-flex align-items-center justify-content-center bg-primary text-white fw-medium px-4 px-lg-5 py-3" href="../reviews.html">
+                                    Reseñas
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-secondary d-flex rounded-2 align-items-center justify-content-center bg-secondary text-white fw-medium px-4 py-3" href="../user.html">
+                                        <i class="bi bi-person-circle"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-fluid bg-secondary flex-grow-1 gap-2">
+        <div class="container py-4 d-flex justify-content-center">
+            <div class="card shadow" style="max-width: 650px; width: 100%;">
+                <div class="card-body secondary-bg d-flex align-items-start gap-3">
+                    <div class="flex-grow-1">
+                        <h4 class="card-title mb-1">El lobo estepario</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Hermann Hesse &bull; 1927</h6>
+                        
+                        <div class="mb-3">
+                            <span class="text-warning fs-5">&#9733;</span>
+                            <span class="text-warning fs-5">&#9733;</span>
+                            <span class="text-warning fs-5">&#9733;</span>
+                            <span class="text-warning fs-5">&#9733;</span>
+                            <span class="text-warning fs-5">&#9734;</span>
+                        </div>
+
+                        <p class="card-text" style="font-size: 0.95rem; line-height: 1.4;">
+                            "El lobo estepario" es una novela que explora la dualidad del ser humano, la lucha interna entre su naturaleza salvaje y su deseo de integrarse en la sociedad. A través de Harry Haller, Hermann Hesse nos invita a reflexionar sobre la soledad, la alienación y la búsqueda de sentido en un mundo fragmentado.
+                        </p>
+                    </div>
+
+                    <div class="flex-shrink-0 w-25" >
+                        <img src="../assets/img/lobo-estepario.webp" alt="El lobo estepario" class="img-fluid rounded" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Comentarios -->
+        <section class="container mt-4 pb-4" style="max-width: 800px;">
+            <h5 class="mb-3 text-white">Comentarios</h5>
+            
+            <div class="card mb-2">
+                <div class="card-body secondary-bg py-2 px-3">
+                <strong>Juan Pérez</strong> <small class="text-muted">- Hace 2 horas</small>
+                <p class="mb-0" style="font-size: 0.9rem;">Me encantó este libro, muy profundo y reflexivo.</p>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="card-body secondary-bg py-2 px-3">
+                <strong>Ana Gómez</strong> <small class="text-muted">- Ayer</small>
+                <p class="mb-0" style="font-size: 0.9rem;">La manera en que Hesse describe la soledad me llegó mucho.</p>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body secondary-bg p-3">
+                <textarea class="form-control mb-2 text-white" rows="3" placeholder="Escribe tu comentario..."></textarea>
+                <button class="btn btn-primary w-100" type="button">Enviar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class=" border-top border-light-subtle mt-auto">
+        <div class="container py-4">
+            <div class="row text-center text-md-start gy-4">
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-semibold d-flex justify-content-center justify-content-md-start align-items-center">
+                    <i class="bi bi-instagram me-2 fs-5"></i>
+                    <span>Síguenos</span>
+                    </h5>
+                    <a href="https://www.instagram.com/libreria_letrasymareas/" 
+                    target="_blank" 
+                    class="custom-link text-decoration-none d-block">
+                    @libreria_letrasymareas
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-semibold">
+                    <i class="bi bi-clock me-2"></i> Horarios
+                    </h5>
+                    <p class="mb-1">Lunes a Viernes: 11:00–14:00 / 15:00–19:00</p>
+                    <p class="mb-0">Sábado: 12:00–19:00</p>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-semibold">
+                    <i class="bi bi-geo-alt me-2"></i> Dirección
+                    </h5>
+                    <a href="https://maps.app.goo.gl/bWviMpaFiFxWSUhn7" 
+                    target="_blank" 
+                    class="custom-link text-decoration-none text- d-block">
+                        Inmaculada Concepción 11, San Antonio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Letras y Mareas - Panel de Administración</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="bg-secondary">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-primary d-md-none shadow-sm sticky-top">
+    <div class="container-fluid">
+      <span class="navbar-brand text-white">Panel de Administración</span>
+      <button class="btn btn-outline-light d-md-none" onclick="toggleSidebar()">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Main content wrapper -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 d-md-block bg-primary shadow border-3 text-white sidebar px-3 py-4" id="sidebar">
+        <div class="d-flex align-items-center justify-content-end mb-2">
+            <button class="btn btn-outline-light d-md-none" onclick="toggleSidebar()">&#9776;</button>
+        </div>
+
+        <h3 class="card-title fs-5 mb-4 text-center">Panel de Administración</h3>
+        
+        <ul class="navbar-nav ms-auto d-flex flex-column gap-2">
+          <li class="nav-item">
+              <a class="nav-link nav-primary rounded d-flex align-items-center justify-content-center bg-primary text-white fw-medium px-4 px-lg-5 py-3" href="dashboard.html">
+              Inicio
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link nav-primary d-flex align-items-center justify-content-center bg-primary text-white fw-medium px-4 px-lg-5 py-3" href="events.html">
+              Eventos
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link nav-primary d-flex align-items-center justify-content-center bg-primary text-white fw-medium px-4 px-lg-5 py-3" href="reviews.html">
+              Reseñas
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link nav-primary d-flex align-items-center justify-content-center bg-primary text-white fw-medium px-4 px-lg-5 py-3" href="../index.html">
+              Regresar
+              </a>
+          </li>
+          <li class="nav-item">
+              <a class="btn btn-danger d-flex rounded-2 align-items-center justify-content-center text-white fw-medium px-4 py-3" onclick="logout()">
+                  Cerrar Sesión
+              </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+        <div class="row mt-4">
+          <div class="col-md-12 mb-3">
+            <div class="card h-100">
+              <div class="card-body shadow-sm rounded bg-white d-flex flex-column justify-content-between">
+                <div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="card-title">Eventos</h5>
+                        <button class="btn btn-primary" onclick="openCreateModal()">Agregar Evento</button>
+                    </div>
+
+                    <div class="text-success mb-3 d-none text-center" id="event-success">
+                        ¡Evento guardado correctamente!
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover table-primary">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Evento</th>
+                                <th scope="col">Enlace</th>
+                                <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Microcuentos</td>
+                                    <td class="text-truncate">https://www.instagram.com/p/DKiC5S0vCPo</td>
+                                    <td class="d-flex gap-2">
+                                        <button class="btn btn-primary btn-sm" onclick="openEditModal()">Editar</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteEvent(this)">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td class="text-truncate">Aún recordamos</td>
+                                    <td>https://www.instagram.com/p/DJl-paeRn4s</td>
+                                    <td class="d-flex gap-2">
+                                        <button class="btn btn-primary btn-sm" onclick="openEditModal()">Editar</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteEvent(this)">Eliminar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">3</th>
+                                    <td class="text-truncate">(in)felicidad</td>
+                                    <td>https://www.instagram.com/p/DKStLUkPgop</td>
+                                    <td class="d-flex gap-2">
+                                        <button class="btn btn-primary btn-sm" onclick="openEditModal()">Editar</button>
+                                        <button class="btn btn-danger btn-sm" onclick="deleteEvent(this)">Eliminar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="event-form" class="bg-white">
+                <div class="modal-header">
+                <h5 class="modal-title" id="event-modal-label">Añadir Evento</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                <div class="mb-3">
+                    <label for="event-name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="event-name" placeholder="ej: Microcuentos" required>
+                    <div id="event-name-errors" class="invalid-feedback d-none"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="event-instagram" class="form-label">Enlace de Instagram</label>
+                    <input type="url" class="form-control" id="event-instagram" placeholder="ej: https://instagram.com/...">
+                    <div id="event-instagram-errors" class="invalid-feedback d-none"></div>
+                </div>
+                <div class="mb-3">
+                    <label for="event-image" class="form-label">Afiche</label>
+                    <input type="file" class="form-control" id="event-image" accept="image/*" required>
+                    <div id="event-image-errors" class="invalid-feedback d-none"></div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script src="../assets/js/admin-events.js"></script>
+</body>
+</html>
