@@ -21,6 +21,7 @@ describe('ProfileComponent', () => {
     fixture = TestBed.createComponent(ProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    service.logout();
     service.login('email', 'name');
   });
 
