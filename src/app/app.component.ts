@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "./shared/components/header/header.component";
+import { FooterComponent } from "./shared/components/footer/footer.component";
 
+/**
+ * @description
+ * Componente principal de la aplicación
+ */
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
@@ -8,5 +14,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'letras-y-mareas';
+  title = 'Letras y mareas';
 }
