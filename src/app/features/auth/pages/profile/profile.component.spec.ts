@@ -21,7 +21,7 @@ describe('ProfileComponent', () => {
     fixture = TestBed.createComponent(ProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    
+    service.login('email', 'name');
   });
 
   it('El componente se ha creado', () => {
@@ -29,8 +29,6 @@ describe('ProfileComponent', () => {
   });
 
   it('Se muestran los datos del usuario logueado en el formulario', () => {
-    service.login('email', 'name');
-    
     expect(component.form.value.email).toBe('email');
     expect(component.form.value.name).toBe('name');
   });
