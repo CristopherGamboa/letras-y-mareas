@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+
+    /* Custom Fonts */
+
+    --font-merriweather: "Merriweather", serif;
+
+    /* Custom Colors */
+
+    --color-warm-gold-500: #e9c16a;
+    --color-warm-gold-600: #d3a84d;
+
+    --color-andes-blue-500: #64a2ad;
+    --color-andes-blue-600: #528792;
+
+    --color-cloud-100: #fffaf7;
+    --color-cloud-950: #f8fdf5;
+
+    --color-storm-100: #2e2e2e;
+}
