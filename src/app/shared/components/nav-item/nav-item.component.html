@@ -1,0 +1,16 @@
+<li>
+    <a [routerLink]="route()" routerLinkActive="active" 
+    [routerLinkActiveOptions]="{exact: true}" class="py-4 px-6" 
+    [class.bg-warm-gold-500]="color() === 'warm-gold'" 
+    [class.bg-andes-blue-500]="color() === 'andes-blue'"
+    [class.hover:bg-warm-gold-600]="color() === 'warm-gold'" 
+    [class.hover:bg-andes-blue-600]="color() === 'andes-blue'"
+    [class]="'flex items-center'"
+    >
+        {{ label() }}
+
+        @if (icon() != null && icon() == 'user') {
+            <svg-user class="m-1 w-4 h-4 fill-cloud-100" />
+        }
+    </a>
+</li>

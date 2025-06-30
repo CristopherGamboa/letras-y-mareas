@@ -1,0 +1,18 @@
+<div class="flex justify-center">
+    <div class="flex flex-col gap-y-3 md:w-3/5">
+        <form [formGroup]="form" (ngSubmit)="sendComment()" class="flex flex-col gap-y-2 bg-cloud-950/80 p-4">
+            <textarea formControlName="comment" class="resize-none bg-cloud-100 p-2 border-b-2 border-andes-blue-500 appearance-none focus:outline-none 
+                    focus:ring-0 focus:border-andes-blue-600" placeholder="Escribe tu comentario..." 
+            rows="3"></textarea>
+            
+            <button type="submit" [disabled]="!form.valid" class="bg-warm-gold-500 hover:bg-warm-gold-600 
+            text-cloud-100 p-2 disabled:bg-warm-gold-500/60 disabled:cursor-not-allowed">
+                Comentar
+            </button>
+        </form>
+        
+        @for (comment of allComments(); track $index) {
+            <app-comment [comment]="comment" />
+        }
+    </div>
+</div>

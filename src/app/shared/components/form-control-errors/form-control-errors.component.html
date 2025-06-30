@@ -1,0 +1,8 @@
+@if (hasErrors()){
+    @for (error of controlErrors() | keyvalue; track $index) 
+    {
+        <div class="text-sm text-red-800">
+            {{ getErrorMessage(error.key) }}
+        </div>
+    }
+}

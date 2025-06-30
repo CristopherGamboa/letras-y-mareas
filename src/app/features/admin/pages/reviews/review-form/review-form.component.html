@@ -1,0 +1,135 @@
+<div class="flex flex-col w-full h-full bg-cloud-100 p-8 overflow-y-auto">
+    <div class="flex flex-col gap-y-4 rounded shadow">
+        <form [formGroup]="form" (ngSubmit)="createReview()" class="flex flex-col gap-y-10 max-h-96 p-2  overflow-y-auto">
+            <div class="flex flex-col gap-2">
+                @let bookTitleControl = form.get('bookTitle');
+
+                <div class="relative z-0">
+                    <input type="text" id="book-title" formControlName="bookTitle" class="block py-2.5 px-0 w-full text-sm 
+                    text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none 
+                    focus:ring-0 focus:border-andes-blue-500 peer" placeholder=" " />
+                    <label for="book-title" class="absolute text-sm text-gray-500
+                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 
+                    peer-focus:text-andes-blue-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Título del libro</label>
+                </div>
+
+                @if (bookTitleControl && bookTitleControl.errors && bookTitleControl.touched && bookTitleControl.invalid) {
+                    <app-form-control-errors [isControlTouched]="bookTitleControl.touched" 
+                    [controlErrors]="bookTitleControl.errors" />
+                }
+            </div>
+
+            <div class="flex flex-col gap-2">
+                @let bookAuthorControl = form.get('bookAuthor');
+
+                <div class="relative z-0">
+                    <input type="text" id="book-author" formControlName="bookAuthor" class="block py-2.5 px-0 w-full text-sm 
+                    text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none 
+                    focus:ring-0 focus:border-andes-blue-500 peer" placeholder=" " />
+                    <label for="book-author" class="absolute text-sm text-gray-500
+                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 
+                    peer-focus:text-andes-blue-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Autor del libro</label>
+                </div>
+
+                @if (bookAuthorControl && bookAuthorControl.errors && bookAuthorControl.touched && bookAuthorControl.invalid) {
+                    <app-form-control-errors [isControlTouched]="bookAuthorControl.touched" 
+                    [controlErrors]="bookAuthorControl.errors" />
+                }
+            </div>
+
+            <div class="flex flex-col gap-2">
+                @let bookYearControl = form.get('bookYear');
+
+                <div class="relative z-0">
+                    <input type="number" id="book-year" formControlName="bookYear" class="block py-2.5 px-0 w-full text-sm 
+                    text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none 
+                    focus:ring-0 focus:border-andes-blue-500 peer" placeholder=" " />
+                    <label for="book-year" class="absolute text-sm text-gray-500
+                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 
+                    peer-focus:text-andes-blue-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Año del libro</label>
+                </div>
+
+                @if (bookYearControl && bookYearControl.errors && bookYearControl.touched && bookYearControl.invalid) {
+                    <app-form-control-errors [isControlTouched]="bookYearControl.touched" 
+                    [controlErrors]="bookYearControl.errors" />
+                }
+            </div>
+
+            <div class="flex flex-col gap-2">
+                @let ratingControl = form.get('rating');
+
+                <div class="relative z-0">
+                    <input type="number" id="rating" formControlName="rating" class="block py-2.5 px-0 w-full text-sm 
+                    text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none 
+                    focus:ring-0 focus:border-andes-blue-500 peer" placeholder=" " />
+                    <label for="rating" class="absolute text-sm text-gray-500
+                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 
+                    peer-focus:text-andes-blue-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Calificación</label>
+                </div>
+
+                @if (ratingControl && ratingControl.errors && ratingControl.touched && ratingControl.invalid) {
+                    <app-form-control-errors [isControlTouched]="ratingControl.touched" 
+                    [controlErrors]="ratingControl.errors" />
+                }
+            </div>
+
+            <div class="flex flex-col gap-2">
+                @let imageControl = form.get('image');
+
+                <div class="relative z-0">
+                    <input type="file" id="image" formControlName="image" class="block py-2.5 px-0 w-full text-sm 
+                    text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none 
+                    focus:ring-0 focus:border-andes-blue-500 peer" placeholder=" " />
+                    <label for="image" class="absolute text-sm text-gray-500
+                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 
+                    peer-focus:text-andes-blue-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Imagen</label>
+                </div>
+
+                @if (imageControl && imageControl.errors && imageControl.touched && imageControl.invalid) {
+                    <app-form-control-errors [isControlTouched]="imageControl.touched" 
+                    [controlErrors]="imageControl.errors" />
+                }
+            </div>
+
+            <div class="flex flex-col gap-2">
+                @let reviewControl = form.get('review');
+
+                <div class="relative z-0">
+                    <textarea id="review" formControlName="review" class="block py-2.5 px-0 w-full text-sm 
+                    text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none 
+                    focus:ring-0 focus:border-andes-blue-500 peer" placeholder=" " ></textarea>
+                    <label for="review" class="absolute text-sm text-gray-500
+                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 
+                    peer-focus:text-andes-blue-500 peer-placeholder-shown:scale-100 
+                    peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 
+                    rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Reseña</label>
+                </div>
+
+                @if (reviewControl && reviewControl.errors && reviewControl.touched && reviewControl.invalid) {
+                    <app-form-control-errors [isControlTouched]="reviewControl.touched" 
+                    [controlErrors]="reviewControl.errors" />
+                }
+            </div>
+                
+            <button type="submit" [disabled]="!form.valid" class="bg-warm-gold-500 text-white p-2
+                font-semibold hover:bg-warm-gold-600 disabled:bg-warm-gold-500/60 disabled:hover:bg-warm-gold-500/60 
+                disabled:cursor-not-allowed">
+                Confirmar
+            </button>
+        </form>
+
+        <p class="text-green-500 text-sm text-center">
+            {{ message() }}
+        </p>
+    </div>
+</div>

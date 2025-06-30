@@ -1,0 +1,29 @@
+<div class="flex flex-col bg-cloud-950 rounded h-full">
+    <div class="flex items-center justify-between p-4">
+        <span class="text-xs font-bold text-storm-100/50">
+            Eventos
+        </span>
+        <button (click)="openForm(null)" class="bg-warm-gold-500 text-white text-sm md:text-base p-2 font-semibold hover:bg-warm-gold-600">
+            Añadir
+        </button>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 overflow-y-auto max-h-full p-4 gap-4">
+        @for (event of events(); track $index) {
+            <div class="relative rounded shadow-sm">
+                <a class="block" (click)="openForm(event)">
+                    <img height="100" width="100" [ngSrc]="event.image"
+                    class="w-full" priority="true" />
+                    
+                    <div class="absolute inset-0 bg-black/0 opacity-0 hover:bg-black/50 hover:opacity-100 
+                    flex gap-x-2 items-center justify-center text-white font-semibold transition-opacity 
+                    duration-300 ease-in-out">
+                        <span class="text-sm md:text-base font-semibold">
+                            Editar
+                        </span>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>

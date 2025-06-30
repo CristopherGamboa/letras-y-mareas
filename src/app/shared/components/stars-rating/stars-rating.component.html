@@ -1,0 +1,10 @@
+<div class="flex items-center gap-x-2">
+    @for (star of stars(); track $index) {
+        @if ($index < rating()) {
+            <svg-star class="w-4 h-4 fill-warm-gold-500" />
+        }
+        @else {
+            <svg-star class="w-4 h-4 fill-gray-200" />
+        }
+    }
+</div>

@@ -1,0 +1,14 @@
+<div class="bg-cloud-100 p-4 flex flex-col gap-y-2">
+    <div class="flex items-center gap-x-2">
+        <span class="font-semibold text-storm-100">
+            {{ comment().user }}
+        </span>
+        <span class="text-sm text-storm-100">
+            {{ comment().date | date }}
+        </span>
+    </div>
+
+    <p class="text-storm-100/80">
+        {{ comment().comment }}
+    </p>
+</div>

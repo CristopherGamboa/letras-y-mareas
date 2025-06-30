@@ -1,0 +1,9 @@
+<div class="flex flex-col gap-y-6">
+    @if (review(); as review) {
+        <app-review-card [review]="review" />
+
+        <app-comments [comments]="review.comments" />
+    }
+</div>
+
+

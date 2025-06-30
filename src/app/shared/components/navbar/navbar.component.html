@@ -1,0 +1,7 @@
+<nav>
+    <ul class="flex gap-x-2 text-cloud-100">
+        @for (item of navItems(); track item.route) {
+            <app-nav-item [route]="item.route" [label]="item.label" [color]="item.color" [icon]="item.icon ?? null" />
+        }
+    </ul>
+</nav>

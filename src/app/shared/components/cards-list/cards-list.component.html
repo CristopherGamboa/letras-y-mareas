@@ -1,0 +1,5 @@
+<div [class]="'grid gap-4 ' + grid()">
+    @for (card of cards(); track card.image) {
+        <app-card [card]="card" />
+    }
+</div>
