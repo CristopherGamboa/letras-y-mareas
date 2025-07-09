@@ -1,0 +1,21 @@
+# Node modules
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Dist
+dist
+.tmp
+.angular
+
+# IDEs y editores
+.vscode
+.idea
+
+# Sistemas de control de versiones
+.git
+.gitignore
+
+# Mac / Linux / Windows system files
+.DS_Store
+Thumbs.db
