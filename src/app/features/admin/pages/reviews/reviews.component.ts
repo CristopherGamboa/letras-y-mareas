@@ -1,10 +1,11 @@
 import { Dialog, DialogModule } from '@angular/cdk/dialog';
 import { NgOptimizedImage } from '@angular/common';
-import { Component, inject, signal, viewChild } from '@angular/core';
+import { Component, computed, inject, signal, viewChild } from '@angular/core';
 import { EventService } from '@core/services/event.service';
 import { ReviewFormComponent } from './review-form/review-form.component';
 import { ReviewService } from '@core/services/review.service';
 import { Review } from '@core/interfaces/review';
+import { rxResource } from '@angular/core/rxjs-interop';
 
 /**
  * @description
@@ -19,7 +20,12 @@ export class ReviewsComponent {
   reviewService = inject(ReviewService);
   dialog = inject(Dialog);
 
-  reviews = signal<Review[]>(this.reviewService.getReviews());
+  reviewsResource = rxResource({
+    loader: () => this.reviewService.getReviews(),
+    defaultValue: [] as Review[],
+  })
+  reviews = computed(() => this.reviewsResource.value());
+  
   selectedReview = signal<Review | null>(null);
 
   /**

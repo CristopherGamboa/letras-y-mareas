@@ -2,10 +2,10 @@
     <app-section-title title="Eventos destacados" 
     class="text-center text-2xl md:text-6xl" />
     
-    <app-cards-list [cards]="events" />
+    <app-cards-list [cards]="events()" />
 
     <app-section-title title="Reseñas destacadas" 
     class="text-center text-2xl md:text-6xl" />
     
-    <app-cards-list [cards]="reviews" grid="grid-cols-1 md:grid-cols-3 lg:grid-cols-5" />
+    <app-cards-list [cards]="reviews()" grid="grid-cols-1 md:grid-cols-3 lg:grid-cols-5" />
 </div>

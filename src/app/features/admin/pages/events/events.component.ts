@@ -1,9 +1,10 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Component, computed, ElementRef, inject, signal, viewChild } from '@angular/core';
 import { Card } from '@core/interfaces/card';
 import { EventService } from '@core/services/event.service';
 import { EventFormComponent } from "./event-form/event-form.component";
 import { Dialog, DialogModule } from '@angular/cdk/dialog';
+import { rxResource } from '@angular/core/rxjs-interop';
 
 /**
  * @description
@@ -20,7 +21,12 @@ export class EventsComponent {
 
   eventFormDialog = viewChild.required<ElementRef<HTMLDialogElement>>('eventForm');
 
-  events = signal<Card[]>(this.eventService.getEventsCards());
+  eventsResource = rxResource({
+    loader: () => this.eventService.getEventsCards(),
+    defaultValue: [] as Card[],
+  });
+  events = computed(() => this.eventsResource.value());
+  
   selectedEvent = signal<Card | null>(null);
 
   /**
